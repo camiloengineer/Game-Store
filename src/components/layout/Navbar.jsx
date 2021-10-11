@@ -1,8 +1,11 @@
 import React from 'react'
 import {
+    NavLink,
     Link,
     BrowserRouter as Router
 } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
 
 export const Navbar = () => {
     return (
@@ -11,13 +14,17 @@ export const Navbar = () => {
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center">
                         <div className="flex-shrink-0">
-                            <img className="h-8 w-8" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow" />
+                            <NavLink to="/">
+                                <img className="h-8 w-8" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow" />
+                            </NavLink>
                         </div>
                         <div className="hidden md:block">
                             <div className="ml-10 flex items-baseline space-x-4">
-                                <Link to="/" className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</Link>
-                                <Link to="/about" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</Link>
-                                <Link to="/contact" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</Link>
+
+                                <NavLink to="/" exact activeClassName="bg-gray-700 text-white" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" >Home</NavLink>
+                                <NavLink to="/about" activeClassName="bg-gray-700 text-white" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</NavLink>
+                                <NavLink to="/contact" activeClassName="bg-gray-700 text-white" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</NavLink>
+
                             </div>
                         </div>
                     </div>
@@ -35,9 +42,14 @@ export const Navbar = () => {
                                 <div>
                                     <button type="button" className="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                         <span className="sr-only">Open user menu</span>
-                                        <img className="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
-                                    </button>
+                                    </button> 
                                 </div>
+                            </div>
+                            <div className="ml-3 relative">
+                                <NavLink to="/login" activeClassName="bg-purple-700 border-none" className="bg-transparent hover:bg-purple-500 text-white font-semibold hover:text-white py-2 px-4 border border-purple-500 hover:border-transparent rounded mx-1">
+                                    <FontAwesomeIcon className="text-white mr-2" icon={faUser} />
+                                    Login
+                                </NavLink>
                             </div>
                         </div>
                     </div>
@@ -60,9 +72,10 @@ export const Navbar = () => {
             <div className="md:hidden" id="mobile-menu">
                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
 
-                    <Link to="/" className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Home</Link>
-                    <Link to="/about" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</Link>
-                    <Link to="/contact" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</Link>
+                    <NavLink to="/" exact activeClassName="bg-gray-700 text-white" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" >Home</NavLink>
+                    <NavLink to="/login" activeClassName="bg-gray-700 text-white" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Login</NavLink>
+                    <NavLink to="/about" activeClassName="bg-gray-700 text-white" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</NavLink>
+                    <NavLink to="/contact" activeClassName="bg-gray-700 text-white" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</NavLink>
 
                 </div>
                 <div className="pt-4 pb-3 border-t border-gray-700">

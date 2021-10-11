@@ -1,12 +1,12 @@
 import React from 'react'
 import {
-    Link,
     Redirect,
     Route,
     Switch,
     BrowserRouter as Router
 } from 'react-router-dom'
 import { Navbar } from '../components/layout/Navbar'
+import { LoginView } from '../views/login/LoginView'
 import { AboutView } from './../views/about/AboutView'
 import { ContactView } from './../views/contact/ContactView'
 import { HomeView } from './../views/home/HomeView'
@@ -21,6 +21,11 @@ export const AppRouter = () => {
                         path="/"
                         exact
                         component={HomeView}
+                    />
+
+                    <Route
+                        path="/login"
+                        component={LoginView}
                     />
 
                     <Route
