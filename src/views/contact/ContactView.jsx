@@ -11,7 +11,6 @@ export const ContactView = () => {
                 </div>
             </header>
             <div className='container mx-auto'>
-             
             </div>
         </>
     )

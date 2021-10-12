@@ -21,7 +21,7 @@ export const Navbar = () => {
                         <div className="hidden md:block">
                             <div className="ml-10 flex items-baseline space-x-4">
 
-                                <NavLink to="/" exact activeClassName="bg-gray-700 text-white" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" >Home</NavLink>
+                                <NavLink to="/" exact activeClassName="bg-gray-700 text-white" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" >Store</NavLink>
                                 <NavLink to="/about" activeClassName="bg-gray-700 text-white" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</NavLink>
                                 <NavLink to="/contact" activeClassName="bg-gray-700 text-white" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</NavLink>
 
